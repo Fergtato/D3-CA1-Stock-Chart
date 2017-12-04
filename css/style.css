@@ -28,9 +28,19 @@ body {
 }
 
 .event-line:hover {
-	fill: yellow;
+	fill: #ffe900;
 }
 
 svg text {
  fill: #00a5ff;
+}
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.2;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
 }

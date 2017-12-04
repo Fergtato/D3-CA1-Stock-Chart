@@ -8,11 +8,17 @@ var svg = d3.select("svg"),
 //d3 function for parsing a date tring into a readable date
 var parseTime = d3.timeParse("%d-%b-%y");
 
+
+
 var x = d3.scaleTime().range([0, w]),
     y = d3.scaleLinear().range([h, 0]);
 
 var xAxis = d3.axisBottom(x),
     yAxis = d3.axisLeft(y);
+
+function make_y_gridlines() {
+  return d3.axisLeft(y);
+}
 
 //??
 var zoom = d3.zoom()
@@ -89,6 +95,13 @@ d3.csv("aapl.csv", function(error, data) {
     g.append("g")
 	    .attr("class", "axis axis--y")
 	    .call(yAxis);
+
+	g.append("g")
+	    .attr("class", "grid")
+	    .call(make_y_gridlines().tickFormat("").tickSize(-w));
+
+
+
 
 	g.selectAll("rect")
     .data(data.filter(function(d){ return d.event; }))
