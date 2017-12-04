@@ -4,5 +4,9 @@ body {
 
 .area {
   fill: #CF000F;
+<<<<<<< HEAD
   clip-path: url(#clip);
+=======
+  /*clip-path: url(#clip);*/
+>>>>>>> 62e961766c6759db4348831c82e6fb62d63c4b01
 }

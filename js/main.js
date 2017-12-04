@@ -24,11 +24,19 @@ var x = d3.scaleTime().range([0, w]),
 var xAxis = d3.axisBottom(x),
     yAxis = d3.axisLeft(y);
 
+<<<<<<< HEAD
 var zoom = d3.zoom()
     .scaleExtent([1, 32])
     .translateExtent([[0, 0], [w, h]])
     .extent([[0, 0], [w, h]])
     .on("zoom", zoomed);
+=======
+var area = d3.area()
+    .curve(d3.curveMonotoneX)
+    .x(function(d) { return x(d.date); })
+    .y0(h)
+    .y1(function(d) { return y(d.close); });
+>>>>>>> 62e961766c6759db4348831c82e6fb62d63c4b01
 
 var area = d3.area()
     .curve(d3.curveMonotoneX)
@@ -37,6 +45,15 @@ var area = d3.area()
     .y1(function(d) { return y(d.close); });
 
 
+<<<<<<< HEAD
+=======
+//??
+// svg.append("defs").append("clipPath")
+// 	.attr("id", "clip")
+// 	.append("rect")
+// 	.attr("width", w)
+// 	.attr("height", h);
+>>>>>>> 62e961766c6759db4348831c82e6fb62d63c4b01
 
 //??
 svg.append("defs").append("clipPath")
@@ -45,12 +62,20 @@ svg.append("defs").append("clipPath")
 	.attr("width", w)
 	.attr("height", h);
 
+<<<<<<< HEAD
+=======
+var g = svg.append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+>>>>>>> 62e961766c6759db4348831c82e6fb62d63c4b01
 
 var g = svg.append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 62e961766c6759db4348831c82e6fb62d63c4b01
 d3.csv("aapl.csv", function(error, data) {
 
 	if (error) throw error;
@@ -64,6 +89,7 @@ d3.csv("aapl.csv", function(error, data) {
   	y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
 	g.append("path")
+<<<<<<< HEAD
 		.datum(data)
 		.attr("class", "area")
 		.attr("d", area);
@@ -96,3 +122,17 @@ function zoomed() {
 	g.select(".area").attr("d", area.x(function(d) { return xt(d.date); }));
 	g.select(".axis--x").call(xAxis.scale(xt));
 }
+=======
+      .datum(data)
+      .attr("class", "area")
+      .attr("d", area);
+
+    g.append("g")
+      .attr("transform", "translate(0," + h + ")")
+      .call(xAxis);
+
+    g.append("g")
+      .call(yAxis);
+
+})
+>>>>>>> 62e961766c6759db4348831c82e6fb62d63c4b01
