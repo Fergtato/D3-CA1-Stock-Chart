@@ -1,3 +1,5 @@
+/*set your variables here*/
+
 var svg = d3.select("svg"),
     margin = {top: 30, right: 30, bottom: 30, left: 30},
     w = +svg.attr("width") - margin.left - margin.right,
