@@ -1,7 +1,5 @@
 /*set your variables here*/
-var w = 500;
-var h = 500;
-var padding = 20;
+
 
 var lineData = [
 	{ "x": 1, "y": 5},
@@ -11,6 +9,11 @@ var lineData = [
 	{ "x": 80, "y": 25},
 	{ "x": 100, "y": 5}
 ];
+
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 20, left: 20},
+    w = +svg.attr("width") - margin.left - margin.right,
+    h = +svg.attr("height") - margin.top - margin.bottom;
 
 var xMax = d3.max(lineData, function(d) { return d.x });
 var yMax = d3.max(lineData, function(d) { return d.y });
@@ -30,13 +33,15 @@ var lineFunction = d3.line()
 	.y(function(d) { return yScale(d.y); })
 	.curve(d3.curveBundle.beta(0.3));
 
-
-var svgContainer = d3.select("body").append("svg")
-	.attr('width', w)
-	.attr('height', h);
-
-var lineGraph = svgContainer.append('path')
+var lineGraph = svg.append('path')
 	.attr('d', lineFunction(lineData))
 	.attr('stroke', 'blue')
 	.attr('stroke-width', '2')
 	.attr('fill', 'none');
+
+
+// var svgContainer = d3.select("body").append("svg")
+// 	.attr('width', w)
+// 	.attr('height', h);
+
+
