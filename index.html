@@ -3,14 +3,44 @@
 <title>D3 Scatter Plot</title>
 <script src="js/d3.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+
+<!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.35/js/uikit-icons.min.js"></script>
 <body>
 
+<div class="uk-container uk-light uk-text-center">
+	<h2 class="uk-margin-top">Company stock prices in relation to big events</h2>
+</div>
 
-<svg width="1000" height="500"></svg>
+<div class="uk-container uk-padding uk-padding-remove-top">
+	<svg width="1200" height="500"></svg>
+</div>
+
+<div class="uk-container uk-light uk-padding-small">
+	<div class="uk-child-width-expand@s uk-text-center" uk-grid>
+	    <div>
+	        <button class="uk-button uk-button-default btn-aapl">Apple</button>
+	    </div>
+	    <div>
+	        <button class="uk-button uk-button-default btn-goog">Google</button>
+	    </div>
+	    <div>
+	        <button class="uk-button uk-button-default btn-tsla">Tesla</button>
+	    </div>
+	    <div>
+	        <button class="uk-button uk-button-default btn-msft">Microsoft</button>
+	    </div>
+	</div>
+</div>
 
 
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/main.js"></script>
 
 </body>

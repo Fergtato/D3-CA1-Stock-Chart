@@ -1,14 +1,26 @@
+:root {
+  --accent-color: #00a5ff;
+  --dark-color: #004870;
+}
+
 body {
 	margin: 0;
 	background-color: #1B283A;
+	height: 100vh;
+}
+
+svg {
+	display: block;
+	margin: auto;
 }
 
 .area {
   /*fill: #CF000F;*/
   clip-path: url(#clip);
 
-  stroke: #00a5ff;
+  stroke: var(--accent-color);
   stroke-width: 2px;
+  transition: 0.2s;
 }
 
 .tick text {
@@ -24,15 +36,37 @@ body {
 }
 
 .event-line {
-	fill: #00a5ff;
+	fill: var(--accent-color);
+	transition: 0.2s;
 }
 
 .event-line:hover {
-	fill: #ffe900;
+	fill: white;
+}
+
+.event-dot {
+	fill: white;
+	transition: 0.2s;
+	/*stroke: white;
+	stroke-opacity: 0;
+	stroke-width: 100px;*/
+}
+
+.event-dot:hover {
+	fill: var(--accent-color);
 }
 
 svg text {
- fill: #00a5ff;
+ fill: var(--accent-color);
+}
+
+.start {
+	stop-color: var(--accent-color);
+	transition: 0.2s;
+}
+.end {
+	stop-color: var(--dark-color);
+	transition: 0.2s;
 }
 
 .grid line {
@@ -43,4 +77,52 @@ svg text {
 
 .grid path {
   stroke-width: 0;
+}
+
+.uk-select {
+    background-color: transparent !important;
+    color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0px 0px 5px 1px var(--accent-color) !important;
+    transition: 0.2s;
+}
+
+.uk-select:hover {
+    color: white !important;
+    border-color: white !important;
+    box-shadow: 0px 0px 5px 1px white !important;
+    transition: 0.2s;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;					
+    padding: 5px 10px;				
+    font: 12px sans-serif;		
+    background: #1B283A;	
+    border: 2px solid var(--accent-color);
+    border-radius: 3px;			
+    pointer-events: none;
+    color: var(--accent-color);
+}
+
+.btn-aapl {
+	border-color: #00a5ff !important;
+	color: #00a5ff !important;
+	box-shadow: 0px 0px 5px 1px #00a5ff !important;
+}
+.btn-goog {
+	border-color: #37ff00 !important;
+	color: #37ff00 !important;
+	box-shadow: 0px 0px 5px 1px #37ff00 !important;
+}
+.btn-tsla {
+	border-color: #ff0000 !important;
+	color: #ff0000 !important;
+	box-shadow: 0px 0px 5px 1px #ff0000 !important;
+}
+.btn-msft {
+	border-color: #fffa00 !important;
+	color: #fffa00 !important;
+	box-shadow: 0px 0px 5px 1px #fffa00 !important;
 }
